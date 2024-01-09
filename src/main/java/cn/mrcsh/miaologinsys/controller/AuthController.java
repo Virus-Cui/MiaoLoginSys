@@ -12,6 +12,7 @@ import java.io.IOException;
 
 @RestController
 @RequestMapping("/auth")
+@CrossOrigin
 public class AuthController extends ABaseController{
 
     @Autowired
@@ -50,6 +51,12 @@ public class AuthController extends ABaseController{
         }else {
             response.getWriter().write("NOT EXISTS");
         }
+    }
+
+    @GetMapping("/logout")
+    public response logout(){
+        StpUtil.logout();
+        return success();
     }
 
 }

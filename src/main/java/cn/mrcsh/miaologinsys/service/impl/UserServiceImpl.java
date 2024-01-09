@@ -45,7 +45,7 @@ public class UserServiceImpl implements UserService {
         mailService.sendEmail(user.getEmail(), String.format("""
                 请点击以下链接启用账号
                 %s
-                """, "http://127.0.0.1:8888/auth/checkAccount/"+user.getUserId()));
+                """, "http://localhost:5173/ca?id="+user.getUserId()));
     }
 
     @Override
